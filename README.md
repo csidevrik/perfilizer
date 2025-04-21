@@ -1,2 +1,5 @@
-# perfilizer
-Una herramienta que personaliza funciones para el PROFILE.ps1 y asi le permite a los desarrolladores trabajar mas plenamente en Windows
+LISTO AQUI TENEMOS A LA HERRAMIENTA DE w-ethtool trataremos de que haga la evaluacion de la interfaz de red al mismo estilo que lo hace ethtool en linux.
+
+
+
+Este tan solo es un cambio en el README.md
