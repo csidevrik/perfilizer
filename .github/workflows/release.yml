@@ -1,0 +1,31 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Se ejecuta solo si haces un tag como v1.0.0
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.24.1'
+
+      - name: Compilar binario
+        run: |
+          mkdir -p releases
+          go build -o releases/perfilizer.exe .
+
+      - name: Subir binario al release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: releases/perfilizer.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
