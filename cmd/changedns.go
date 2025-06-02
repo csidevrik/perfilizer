@@ -45,10 +45,11 @@ var changednsCmd = &cobra.Command{
 
 // rootCmd should be defined in your application; if not, define it here for this example.
 var rootCmd = &cobra.Command{
-	Use:   "perfilizer",
-	Example: "perfilizer openwd <DIRECTORY>
+	Use: "perfilizer",
+	// Example: "perfilizer openwd <DIRECTORY>
 	Short: "Perfilizer is a tool for managing network profiles on windows",
 	Long:  "Perfilizer is a tool for managing network profiles on Windows, allowing you to change DNS settings, manage network interfaces, and more.",
+}
 
 func init() {
 	rootCmd.AddCommand(changednsCmd)
